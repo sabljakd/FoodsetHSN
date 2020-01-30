@@ -20,7 +20,7 @@
 
                           <span class='float-right' @click="$store.commit('removeFromCart',item)"><i class="far fa-trash-alt"></i></span>
                         </h5>
-                        <p class="mt-0">{{item.productPrice | currency}} kn</p> 
+                        <p class="mt-0">{{item.productPrice}} HRK</p> 
                         <p class="mt-0">Kolicina : {{item.productQuantity }}</p>
                       </div>
                     </li>
