@@ -1,0 +1,84 @@
+     .sidebar-wrapper {
+    width: 260px;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100px; }
+    .sidebar-wrapper ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+
+    .sidebar-wrapper .sidebar-header {
+      padding: 20px;
+      overflow: hidden; }
+    .sidebar-wrapper .sidebar-header .user-info {
+        float: left; }
+    .sidebar-wrapper .sidebar-header .user-info > span {
+          display: block; }
+    .sidebar-wrapper .sidebar-header .user-info .user-role {
+          font-size: 12px; }
+    .sidebar-wrapper .sidebar-header .user-info .user-status {
+          font-size: 11px;
+          margin-top: 4px; }
+    .sidebar-wrapper .sidebar-header .user-info .user-status i {
+        font-size: 8px;
+        margin-right: 4px;
+        color: #33af33; }
+      
+    .sidebar-wrapper .sidebar-menu ul li a {
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+        position: relative;
+        padding: 8px 30px 8px 20px; }
+    .sidebar-wrapper .sidebar-menu ul li a i {
+          margin-right: 10px;
+          font-size: 12px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 4px; }
+     
+  /*----------------  toggeled sidebar  ----------------*/
+  .page-wrapper.toggled .sidebar-wrapper {
+    left: 0px; }
+
+  @media screen and (min-width: 768px) {
+    .page-wrapper.toggled .page-content {
+      padding-left: 300px; } }
+
+  /*-----------------  page-content  ------------------*/
+  .page-wrapper .page-content {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+   }
+
+  .page-wrapper .page-content > div {
+    padding: 20px 40px; }
+
+  .page-wrapper .page-content {
+    overflow-x: hidden; }
+
+  /*----------sidebar pozadinske boje slike itd --------------*/
+
+    .default-theme .sidebar-wrapper a:not(.dropdown-item),
+    .default-theme .sidebar-wrapper .sidebar-header,
+    .default-theme .sidebar-wrapper .sidebar-search input,
+    .default-theme .sidebar-wrapper .sidebar-search i {
+      color: #030303; }
+    .default-theme .sidebar-wrapper a:not(.dropdown-item):hover,
+    .default-theme .sidebar-wrapper .sidebar-menu li.active > a {
+      color: #e01616; }
+    .default-theme .sidebar-wrapper .sidebar-search input.search-menu,
+  
+    .default-theme .sidebar-wrapper .sidebar-menu a:hover i,
+    .default-theme .sidebar-wrapper .sidebar-menu a:hover:before,
+    .default-theme .sidebar-wrapper .sidebar-menu li.active a i {
+      transform: rotate(360deg);
+      transition-duration: 1s;
+      color: #db1e1e;
+      text-shadow: 0px 0px 10px rgba(204, 36, 162, 0.5); }
