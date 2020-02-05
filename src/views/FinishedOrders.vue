@@ -11,6 +11,10 @@
               <b>Napomena: </b>{{product.napomena}}
             </div>
             
+            <div>
+            <b>Placanje: </b>{{order.placanjeGot}}  <!-- 1 gost jedno placanje -->
+            </div>
+            
             <button id="primary"  @click="doznaka" style="margin-bottom:20px">Uspjesno posluzeno</button>
            <button class="botun" @click="posluzeno(order.id)">X</button>
            
