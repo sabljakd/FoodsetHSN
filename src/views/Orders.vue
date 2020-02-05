@@ -1,12 +1,12 @@
 <template>
   <div class="products">
-      <div class="container">
+      <div class="container">          <!-- povlacimo podatke iz checkouta -->
         <div id="border" style="margin-top:10px" v-for=" order in filteredOrders" :key="order.id">
           <b>Ime gosta: </b>{{order.imeGosta}}
           <b>Prezime gosta: </b>{{order.prezimeGosta}}
           <b>Broj stola: </b>{{order.brojStola}}
 
-            <div v-for="product in order.narudzba" :key="product.id">
+            <div v-for="product in order.narudzba" :key="product.id"> <!-- ispisat ce nam sve nrudzbe iz kosarice/checkouta -->
               <b>Ime menija: </b>{{product.productName}} <br>
               <b>Napomena: </b>{{product.napomena}}
             <br>  <b>Kolicina: </b>{{product.productQuantity}}
