@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "add-to-cart",
-  props: {
+  props: {        // prihvaca ima,sliku,cijenu,id   iz product liste
     name: String,
     image: String,
     price: String,
@@ -18,7 +18,7 @@ export default {
   data(){
       return {
           item: {
-            productName: this.name,
+            productName: this.name,             // uzima name iz propsa i stavlja ga u this.name i sprema kao productName
             productImage: this.image,
             productPrice: this.price,
             productId: this.pId,
