@@ -16,7 +16,7 @@
           
             
 
-              <div v-for="product in filteredProducts" :key="product.id">
+              <div v-for="product in filteredProducts" :key="product.id">    <!-- :key vue mora razlikovati svaku komponenttu u slucaju promjene podataka -->
                   
                     
                         <div class="card" style="text-align: center; margin-bottom: 5px;">
@@ -73,7 +73,7 @@ data(){
   },
   created(){
      //slušamo tablicu products
-      db.collection('products')
+      db.collection('products')                    // isto kao i select * from products
       .onSnapshot(snapshot => {
         snapshot.docChanges().forEach(change => {
 
