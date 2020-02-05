@@ -133,7 +133,7 @@ export default {
 
   data(){
     return {
-        products: [],
+        products: [],   // podatci se spremaju 
         product: {
           name:null,
           description:null,
@@ -141,13 +141,13 @@ export default {
           kategorijaMenija:''
         },
         activeItem:null,
-        modal: '',
+        modal: '',       // sprema edit ili new
         tag: null
     }
   },
  firestore(){
       return {
-        products: db.collection('products'),
+        products: db.collection('products'),    // povezivanje s bazom i spremanje
       }
   },
 
@@ -240,7 +240,7 @@ export default {
           
           
       }
-      // Object.assign(this.$data, this.$options.data.apply(this));
+      
     }
     },
   
