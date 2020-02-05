@@ -50,7 +50,7 @@ export default {
       db.collection("narudzbe").doc(id).delete()
     }
   },
-  computed: {
+  computed: {  // korisitmo kada zelimo prikazati neku modifikacijuu
     filteredOrders(){
       return this.orders.filter(order => order.checked==true);
     } 
