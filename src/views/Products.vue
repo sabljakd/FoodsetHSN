@@ -149,13 +149,13 @@ export default {
       return {
         products: db.collection('products'),    // povezivanje s bazom i spremanje // read data from firestore  
       }
-      }
-  },
+      },
+  
 
  
 
 
-  methods:{
+  methods: {
       
 
       addNew(){
@@ -182,6 +182,7 @@ export default {
           
         });
       });
+
     },
 
       updateProduct(){
@@ -192,6 +193,7 @@ export default {
           })
            $('#product').modal('hide');
     },
+
     editProduct(product){
         this.modal = 'edit';
       this.product = product;
@@ -220,6 +222,7 @@ export default {
           }
         })
     },
+  
 
    
 
@@ -242,10 +245,11 @@ export default {
           
       }
       
-    }
     },
-  
+  },
 };
+  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
