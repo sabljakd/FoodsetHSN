@@ -38,14 +38,14 @@ export default {
   methods:{
       
       register(){
-           var createUser = fb.functions().httpsCallable('createUser');
+           var createUser = fb.functions().httpsCallable('createUser');  // poziva gotovu funkciju koju smo instalirali kroz npm 
               createUser({email: this.email, password: this.password})
               .then(()=>{
                 this.$router.go(-1)
               })
       },
       deleteuser(){
-        var deleteUser = fb.functions().httpsCallable('deleteUser');
+        var deleteUser = fb.functions().httpsCallable('deleteUser');  
               deleteUser({email: this.deleteUser})
               .then(()=>{
                 /* this.$router.go(-1) */
