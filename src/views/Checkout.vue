@@ -137,7 +137,7 @@ export default {
         this.$store.commit('decrement', id)
     },
     nastaviPlacanje(){
-      db.collection('narudzbe').add({
+      db.collection('narudzbe').add({     // slanje narudzbe u bazu
         narudzba: this.$store.state.cart,
         imeGosta: this.ime,
         prezimeGosta: this.prezime,
@@ -161,7 +161,7 @@ export default {
         })
     }
   },
-  created() {}
+  
 };
 </script>
 <style scoped lang="scss">
