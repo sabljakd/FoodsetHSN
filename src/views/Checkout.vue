@@ -140,7 +140,7 @@ export default {
         this.$store.commit('increment2', id)
     },
     decreaseQty(id) {
-        this.$store.commit('decrement', id)
+        this.$store.commit('decrement2', id)
     },
     nastaviPlacanje(){
       db.collection('narudzbe').add({     // slanje narudzbe u bazu

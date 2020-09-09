@@ -89,6 +89,21 @@ export default new Vuex.Store({
             this.commit('saveData');
     
           },
+
+          decrement2(state, id){
+
+            let found = state.cart.find(product => product.productId == id );
+    
+            if(found){
+              found.productQuantity--;
+            }else{
+              state.cart.push(item);
+    
+            }
+    
+            this.commit('saveData');
+    
+          },
           isprazniKosaricu(state,item){
             state.cart=item    },
 
