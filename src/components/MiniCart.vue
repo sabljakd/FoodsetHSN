@@ -22,11 +22,35 @@
                         </h5>
                         <p class="mt-0">{{item.productPrice}} HRK</p> 
                         <p class="mt-0">Kolicina : {{item.productQuantity }}</p>
+                        <span class="input-group-btn">
+                      <button
+                        type="button"
+                        class="btn btn-dark btn-sm"
+                        @click="decreaseQty(item.productId)"
+                      >
+                        <i class="fa fa-minus"></i>
+                      </button>
+                    </span>
+                   
+                   
+                    <!-- <input type="text" :value="item.productQuantity"  style="margin-left:2px; margin-right:2px" class="form-control input-number"> -->
+                  
+                   
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-dark btn-sm" @click="increaseQty(item.productId)">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                      
+                    </span>
                       </div>
+                      
                     </li>
 
                   </ul>
-              </div>
+                  <div><input v-model="unesikolicinu" type="text" placeholder="unesi kolicinu"></div> <br> 
+                   
+                  <div> <a style="border-style: inset; border-color:red">Ukupna cijena : {{ this.$store.getters.totalPrice | currency('HRK ') }}</a>
+             </div>  </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Nastavi s narudzbom</button>
                 <button type="button" class="btn btn-primary" @click="checkout">Placanje</button>
@@ -40,15 +64,28 @@
 </template>
 
 <script>
+import db from '../firebase'
 export default {
   name: "MiniCart",
   props: {
     msg: String
   },
+  data(){
+    return{
+      unesikolicinu: ""
+    }
+  },
   methods:{
     checkout(){
       $('#miniCart').modal('hide')
       this.$router.push('/checkout')  
+    },
+    increaseQty(id) {  
+          
+        this.$store.commit('increment', {id, "unesikolicinu":this.unesikolicinu})
+    },
+    decreaseQty(id) {
+        this.$store.commit('decrement', {id, "unesikolicinu":this.unesikolicinu})
     }
   }
 };

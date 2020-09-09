@@ -147,7 +147,7 @@ export default {
   },
  firestore(){
       return {
-        products: db.collection('products'),    // povezivanje s bazom i spremanje // read data from firestore  
+        products: db.collection('products'),    // povezivanje s bazom // read data from firestore  
       }
       },
   

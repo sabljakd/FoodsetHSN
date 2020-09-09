@@ -47,7 +47,21 @@ export default new Vuex.Store({
   
         },
 
-        increment(state, id){
+        increment(state, {id, unesikolicinu}){
+
+            let found = state.cart.find(product => product.productId == id );
+    
+            if(found){
+              found.productQuantity=found.productQuantity + unesikolicinu*1;
+            }else{
+              state.cart.push(item);
+    
+            }
+    
+            this.commit('saveData');
+    
+          },
+          increment2(state, id){
 
             let found = state.cart.find(product => product.productId == id );
     
@@ -62,12 +76,12 @@ export default new Vuex.Store({
     
           },
     
-          decrement(state, id){
+          decrement(state, {id, unesikolicinu}){
     
             let found = state.cart.find(product => product.productId == id );
     
             if(found){
-              found.productQuantity--;
+              found.productQuantity= found.productQuantity - unesikolicinu;
             }
             if (found.productQuantity <= 0) {
               found.productQuantity=1;          

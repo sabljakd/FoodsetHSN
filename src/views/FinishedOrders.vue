@@ -1,5 +1,6 @@
 <template>
   <div class="products">
+    <div><b>UKUPNO NARUDŽBI  POSLUZENO : </b>    {{count}}</div>
       <div class="container">
         <div id="border" style="margin-top:10px" v-for=" order in filteredOrders" :key="order.id">
           <b>Ime gosta: </b>{{order.imeGosta}}
@@ -32,7 +33,7 @@ export default {
   name: "Products",
   data(){
     return{
-
+        count:0
     }
   },
   firestore(){
@@ -42,12 +43,13 @@ export default {
   },
   methods: {
     doznaka(){
-      
+      this.count++;
       Toast.fire({
             icon: 'success',
             title: 'Uspjesno posluzeno!'
           })
       $('#product').modal('hide');
+      
     },
     
     posluzeno(id){

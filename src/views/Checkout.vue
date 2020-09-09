@@ -21,6 +21,11 @@
                           <option value="Placa Karticom">Platiti cu karticom</option>
                         </select>
                     </div>
+                    <div><select v-model="baksa" class="custom-select">
+                          <option value="" disabled >Dati baksu</option>
+                          <option value="da">DA</option>
+                          <option value="ne">NE</option>
+                        </select></div>
                 </div>
 
                 
@@ -126,12 +131,13 @@ export default {
         prezime:'',
         brojKartice:'',
         brojStola:'',
-        placanjeGot:''
+        placanjeGot:'',
+        baksa:""
       }
   },
   methods: {
     increaseQty(id) {        
-        this.$store.commit('increment', id)
+        this.$store.commit('increment2', id)
     },
     decreaseQty(id) {
         this.$store.commit('decrement', id)
@@ -143,6 +149,7 @@ export default {
         prezimeGosta: this.prezime,
         brojKartice: this.brojKartice,
         placanjeGot: this.placanjeGot,
+        ostavitikasu: this.baksa,
         brojStola: this.brojStola,
         ukupnaNarudzba: this.$store.getters.totalPrice+' kn'
       })
